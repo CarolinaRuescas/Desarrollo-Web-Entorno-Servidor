@@ -31,6 +31,7 @@
 
     ?>
 
+
     <h2> Más PHP:</h2>
     <?php
         echo "<p>La varible name tiene: $name</p>";
