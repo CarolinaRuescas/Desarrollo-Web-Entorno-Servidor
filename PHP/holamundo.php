@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HolaMundo</title>
 </head>
 <body>
     <h2>PHP:</h2>
@@ -36,7 +36,28 @@
     <?php
         echo "<p>La varible name tiene: $name</p>";
         echo "<h3> Otro título </h3>";
-        echo "<h2></h2>";
+        
+    ?>
+
+    <?php
+    // 16/9/25
+        echo("Hola esto es una mensaje.<br><br>");
+        echo "otra cosa generada con PH";
+
+        // En java: double number = 12.7;
+        $number = 12.7;
+        echo "<p>La variable es : $number</p>";
+
+        $number = "hola";
+        echo "<p>La variable es: $number</p>";
+    
+        // ESTO DARIA ERROR (AUNQUE TODAVIA NO NOS SALTA)
+        // $number = $number + 3;
+        // echo "<p>La variable es: $number </p>"; 
+        
+        
+
+
     ?>
 
 </body>
