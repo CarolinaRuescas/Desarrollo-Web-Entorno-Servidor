@@ -8,7 +8,7 @@
 <body>
 
     <?php
-        
+
 
         ini_set('display_errors', 1);
 
@@ -100,30 +100,29 @@
         $b = 4;
         $comp = $a == $b;
         var_dump($comp); // true
+        echo "<br>";
+
 
         $comp = $a > $b;
         var_dump($comp); // false
+        echo "<br>";
 
         $comp = $a >= $b;
         var_dump($comp); // true
+        echo "<br>";
 
         $comp = $a != $b;  // para poner que los valores son distintos
         var_dump($comp); // false
+        echo "<br>";
 
         $comp = $a <> $b; // es otra forma de poner que son distintos los valores
         var_dump($comp); // false
+        echo "<br>";
 
         echo "<p>Nave espacial: </p>";
         $comp = $a <=> $b;
         var_dump($comp); 
-
-
-
-
-
-
-
-
+        echo "<br>";
     ?>
 
 </body>
