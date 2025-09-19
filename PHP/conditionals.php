@@ -8,12 +8,6 @@
 <body>
     <?php
 
-    ini_set('display_errors', 1);
-
-    ini_set('display_startup_errors', 1);
-
-    error_reporting(E_ALL);
-
     // CONDICIONALES
     // En Java: if(condición) { instrucciones} else { instrucciones}
     
@@ -180,8 +174,79 @@
     }
     echo "</ul>";
 
+    // Imprime en una tabla los valores de
+    $course1 = "DWES";
+    $course2 = "DWEC";
+    $course3 = "DIW";
+    $teacher1 = "Sete";
+    $teacher2 = "Diego";
+    $teacher3 = "Marco";
 
-    
+    echo"<p>Cursos y Profesores</p>";
+    echo"<table border=1>
+        <tr>
+            <th>Asignatura</th>
+            <th>Profesor</th>
+        </tr>
+        <tr>
+            <td>$course1</td>
+            <td>$teacher1</td>
+        </tr>
+        <tr>
+            <td>$course2</td>
+            <td>$teacher2</td>
+        </tr>
+        <tr>
+            <td>$course3</td>
+            <td>$teacher3</td> 
+        </tr>
+    </table>";
     ?>
+
+
+    <!-- Esta es otra forma de hacer el ejercicio anteior pero fuera de  PHP -->
+    <p>Cursos y Profesores</p>
+    <table border="1">
+        <tr>
+            <th>Asignatura</th>
+            <th>Profesor</th>
+        </tr>
+        <tr>
+            <td><?php echo $course1; ?></td>
+            <td><?php echo$teacher1; ?></td>
+        </tr>
+        <tr>
+            <td><?php echo$course2; ?></td>
+            <td><?php echo$teacher2; ?></td>
+        </tr>
+        <tr>
+            <td><?php echo$course3; ?></td>
+            <td><?php echo$teacher3; ?></td> 
+        </tr>
+    </table>
+
+
+
+    <!-- Crea una tabla en la que los numeros 1, 2, 3 nos indique en la columna de al lado multiplicado 
+    por dos hacerlo con bucle -->
+
+    <table border="1">
+        <caption>Número y su multiplicacion por 2</caption>
+        <tr>
+            <th>Número</th>
+            <th>Numero por 2</th>
+        </tr>
+        <?php
+        //Bulce: desde 1 hasta el 20
+        for ( $i= 1; $i <=20; $i++ ){
+                echo"<tr>";
+                echo"<td>$i</td>";
+                $number= $i *2 ;
+                echo "<td>$number</td>";
+                echo"</tr>";
+            }
+        ?>
+    </table>
+
 </body>
 </html>
