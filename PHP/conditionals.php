@@ -245,8 +245,90 @@
                 echo "<td>$number</td>";
                 echo"</tr>";
             }
+        
         ?>
     </table>
 
+    <?php
+        /* Imprimir
+        a a a a
+        a a a a 
+        a a a a 
+        Utilizando OBLIGATORIAMENTE bucles anidados
+        */
+                                    // la "i" representa las filas y la "j" las coumnas
+        for ($i=0; $i<=2; $i++ ){   // se le da valor de 0 a la i porque hay tres filas, siendo la 1º la 0, la 2º la 1 y la 3º el número2
+            
+            for ($j=0; $j<=3; $j++ ){ // como hay 4 columnas pues hacemos lo mismo de lo anterior, pero ahora iria desde el 0 hasya el 3
+                echo "a ";
+            }
+            echo"<br>";
+        }
+        echo"<br>";
+
+        /* Ahora esto:
+        0 0 0 0 0
+        1 1 1 1 1
+        2 2 2 2 2
+        */
+
+        for($i=0; $i<3; $i++ ){
+            for ($j=0; $j<5; $j++ ){
+                echo"$i";
+            }
+            echo "<br>";
+        }
+        echo "<br>";
+
+        /*Ahora esto:
+        0 1 2 3 4 5 
+        0 1 2 3 4 5
+        */
+
+        for($i=0; $i<2; $i++ ){
+            for($j= 0; $j<6; $j++ ){
+                echo "$j";
+            }
+            echo "<br>";
+        }
+        echo"<br>";
+
+        /* Ahora esto:
+        0  1  2  3  4
+        5  6  7  8  9
+        10 11 12 13 14
+        15 16 17 18 19
+        20 21 22 23 24
+        */
+        $n = 0;
+        for($i=0; $i<5; $i++ ){
+            for($j=0; $j<5; $j++ ){
+                echo "$n";  // primero se imprime
+                $n++;       //luego se incrementa
+            }
+            echo "<br>";
+        }
+        echo "<br>";  
+        
+        /* Ahora esto:
+        0  1  2  3
+        3  4  5  6
+        6  7  8  9
+        9  10 11 12
+        12 13 14 15
+        */
+        echo "<table border=1 >";
+        $n = 0;
+        for($i= 0; $i < 5; $i++ ){
+            echo"<tr>";
+            for($j= 0; $j< 4; $j++ ){
+                echo "<td> $n </td>";
+                $n++;
+            }
+            $n --;
+            echo "</tr>";
+        }
+        echo "</table>";
+    ?>
 </body>
 </html>
