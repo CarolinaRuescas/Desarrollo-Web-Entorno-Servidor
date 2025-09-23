@@ -110,19 +110,188 @@
     y “precio negativo” si es negativo.
     */
     echo "<h2>Ejercicio 5</h2>";
-    $precio = 50;
+    $precio = 500;
     if ($precio >= 1000){
-        echo "<p>caro</p>";
+        echo "<p>El precio $precio es caro</p>";
     }else if ($precio >= 100 && $precio < 1000){
-        echo "<p>medio</p>";
+        echo "<p>El precio $precio es medio</p>";
     }else if($precio <= 100){
-        echo "<p>Barato</p>";
+        echo "<p>El precio $precio es barato</p>";
     }else{
         echo "<p>Precio inválido</p>";
     }
+    echo "<br>";    
+
+    /* 
+    EJERCICIO 6
+    Escribe un programa que funcione similar a un reloj, de manera que a partir de los valores de 
+    las variables hora, minuto y segundo muestre la hora dentro de un segundo. Ten en cuenta que 
+    tras las 23:59:59 serán las 0:0:0.
+    */
+    echo "<h2>Ejercicio 6</h2>";
+    $hour = 23;
+    $minute = 59;
+    $second = 59;
+   
+    echo "<p>La hora actuales: $hour:$minute:$second</p>";
+    $second++;
+    //Si ha llegado a 60 segundo -> Reinicializar los segundo e incrmeentar 1 minuto
+    if($second >= 60){
+        $minute++;
+        $second = 0;
+        // Si ha llegado a 60 min -> Reiniciañiozar los minutos e incrementar 1 hora
+        if ($minute >= 60){
+            $hour++;
+            $minute = 0;
+            // si ha llegado a 24 horas -> reinicilizar la horas
+            if ($hour >= 24){
+            $hour = 0;
+            }
+        }
+
+    }
+    echo "<p>Un segundo después es: $hour:$minute:$second</p>";
+
+    /*
+    EJERCICIO 7
+    Realiza el código que imprima desde el 1 hasta el número que pongas en la variable maximo.
+    */
+    echo "<h2>Ejercicio 7</h2>";
+    $i = 0;
+    $max = 20;
+    while ($i < $max){
+        $i++;
+        echo "$i, ";
+    }
+
+    /*
+    EJERCICIO 8
+    Muestra los números del 9 al 15 en una lista desordenada (<ul>). Utiliza un bucle for.
+    */
+    echo "<h2>Ejercicio 8</h2>";
+    echo "<ul>";
+    for ($i = 9; $i <= 15; $i++){
+        echo"<li>";
+        echo "$i";
+        echo "</li>";
+    }
+    echo "</ul>";
+
+    /*
+    EJERCICIO 9 
+    Realiza un bucle que imprima por pantalla los números pares entre 0 y 10 (incluidos), 
+    dentro de un solo párrafo, separados por comas: “0, 2, 4, 6, 8, 10”.
+    */
+    echo "<h2>Ejercicio 9</h2>";
+    echo "<p>";
+    for ($i = 0; $i <= 10; $i++){
+        if ($i%2 == 0){
+            echo "$i, ";
+        }
+    }
+    echo "</p>";
+
+    /*  
+    EJERCICIO 10
+    Muestra los números del 50 al 20, salvo los múltiplos de 3 y de 7, en una lista ordenada.
+    */
+    echo "<h2>Ejercicio 10</h2>";
+    echo "<ol>";
+    for ($i = 50; $i > 20; $i--){
+        if($i%3 != 0 && $i%7 !=0){
+            echo"<li>";
+            echo "$i";
+            echo "</li>";
+        }
+    }
+    echo "</ol>";
+
+    /*
+    EJERCICIO 11
+    Escribe un programa que sume los números desde el 1 hasta el 10. Muestra por pantalla el 
+    resultado. Es decir, 1+2+3+4+5+6+7+8+9+10=55. 
+    (Con que muestre el resultado, 55, es suficiente).
+    */
+    echo "<h2>Ejercicio 11</h2>";
+    $suma = 0;
+    for ($i = 1; $i <= 10; $i++ ){
+        $suma += $i;
+    }
+    echo "<p> La suma del 1 hasta el 10 es = $suma </p>";
 
 
+
+    /*
+    EJERCICIO 12
+    Escribe un programa que dado un número contenido en la variable numero, muestre el 
+    factorial del mismo. El factorial es el producto de los números positivos desde 1 
+    hasta dicho número. Es decir, el factorial de 5 es 1x2x3x4x5 = 120.
+    */
+    echo "<h2>Ejercicio 12</h2>";
+    $number = 5;
+    for ($i = 1; $i < 5; $i++){
+        $number *= $i;
+    }
+    echo "<p> El factorial es  $number </p>";
+
+
+    /*
+    EJERCICIO 13
+    Dadas un par de variables base y exponente, muestra por pantalla el resultado de elevar
+    la base al exponente. Tienes que utilizar un bucle for para ello. No puedes usar el 
+    operador ** ni el método pow().
+    */
+    echo "<h2>Ejercicio 13</h2>";  // 5⁴ = 625
+    $base = 5;
+    $exponente = 4;
     
+
+
+
+    /*
+    EJERCICIO 14
+    Reescribe el ejercicio anterior utilizando un bucle while.
+    */
+    echo "<h2>Ejercicio 14</h2>";
+
+
+
+
+    /*
+    EJERCICIO 15
+    Declara una variable llamada número. Muestra en una tabla (con bordes) la tabla de 
+    multiplicar de dicho número. La primera fila de la tabla es de títulos. Por ejemplo, si numero=7:
+    */
+    echo "<h2>Ejercicio 15</h2>";
+
+    $number = 7;
+    echo "<table border = 1 >
+        <tr>
+            <th>a</th>
+            <th>b</b>
+            <th>multiplicacion</th>
+        </tr>
+        <tr>
+            <th> </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
