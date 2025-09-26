@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios unidades 2 y 3</title>
+    <link rel="stylesheet" href="tablacss.css">
+
 </head>
 <body>
+
     <?php
     /* 
     EJERCICIO 1
@@ -279,40 +282,111 @@
     </table>";
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
+    /*
+    EJERCICIO 18
+    Crea un programa parecido al anterior, pero que haga una pirámide. 
+    En este caso solo tenemos la variable filas. Si filas=5, la salida será:
+        *
+        *  *
+        *  *  *
+        *  *  *  *
+        *  *  *  *  *
+    */
     
+    echo "<h2>Ejercicio 18</h2>";
+
+    $files = 5;
+    $columns = 1;
+    for ($i = 0; $i < $files; $i++){
+        for ($j = 0; $j < $columns; $j++){
+
+            echo "* ";
+        }
+        $columns++;
+        echo "<br>";
+    }
+    echo "<br>";
+
+
+    /*
+    EJERCICIO 19
+    Dado un valor en la variable numero, imprime una pirámide como en el ejemplo. 
+    Si numero=5, la salida será:
+    */
+    echo "<h2>Ejercicio 19</h2>";
+    $files = 5;
+    $columns = 1;
+    for ($i = 0; $i < $files; $i++){
+        for ($j = 0; $j < $columns; $j++){
+
+            echo $j + 1 ." ";
+        }
+        $columns++;
+        echo "<br>";
+    }
+    echo "<br>";
+
+    ?>
+
+    <!--
+    EJERCICIO 20
+    Crea un programa en PHP en un fichero nuevo llamado tablasMultiplicar.php, que llevará 
+    asociado una hoja de estilos css llamada tablasMultiplicarEstilos.css. Genera, a través 
+    de bucles anidados, una tabla lo más parecida a esta (colores, separaciones entre celdas, etc).
+    -->
+
+    <h2>Ejericio 20</h2>
+    <table>
+        <?php
+        for ($i = 0; $i <=10; $i++){
+            echo "<tr>";
+            for ($j = 0; $j <= 10; $j++){
+                //echo "<td></td>"
+                if ($i == 0){  // estoy en la primera fila (la de titulo)
+                    if ($j == 0) {  // La celda de la posicion 0,0
+                        echo "<td class = 'thx'>X</td>";
+                    }else{ //Primera fila con números
+                        echo "<td class = 'thnumber'>" . $j-1 . "</td>";
+
+                    }
+                }else {
+                    if ($i == 0){ //Primera columna con números
+                        echo "<td class='tdNumber'>" . $i-1 . "</td>";
+                    }else{ //Todas las demás celdas: la multiplicación
+                        $mult = ($i-1)* ($j-1);
+                        echo "<td class= 'normal'>a</td>";
+                    }
+                }
+            }
+            echo "</tr>";
+        }
+        ?>
+    </table>
+
+
+
+
+    <?php
+    /*
+    EJERCICIO 21
+    Dada una variable llamada cadena, imprime por pantalla la longitud de dicha cadena.
+    A continuaicón, súmale 1 a esa cadena (cadena = cadena +1; o cadena+=1), ¿qué ocurre?
+    Pon espacios delante y detrás e investiga un método que elimine estos espacios (esto será
+    muy útil en la validación de formularios web, pues es común que la gente meta un espacio
+    después de su email, por ejemplo).
+
+    */
+    echo "<h2>Ejercicio 21</h2>";
+    $cadena = "php";
+    $cadena++;
+    var_dump($cadena);  // sale phq, es decir, a la ultima letra "se le añade 1", pasa a la siguiente letra del abecedario
+
+
+    $cadena = " hola ";
+    var_dump($cadena);  // 6 porque son 4 letras mas dos espacios
+    //Para quitar espacios delante y detrás, función:
+    $cadena = trim($cadena);
+    var_dump($cadena); // 4 sale esto porque quita los espacios
 
     ?>
     
