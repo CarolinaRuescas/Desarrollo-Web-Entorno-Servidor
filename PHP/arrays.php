@@ -184,11 +184,86 @@
             echo "NO existe";   //Sale NO: la variable $school["Ingles"] no existe 
         }
         
+    ?>
+
+    <h2>Repaso arrays asociativos</h2>
+    <?php
+    $asoc = [
+        "w5" => 'a',
+        "w9" => 'b',
+        "s4" => 'c'
+    ];
+    var_dump($asoc[9]);
+    ?>
+
+    <h2>Arrays bidimensionales</h2>
+    <?php
+    $bid = array(
+        array(5,6,7,8,),
+        array(9,10,11,12),
+        array(13,14,15,16)
+    );
+    //Otra forma de declararlo:
+    $bid2 = [
+        [5,6,7,8],
+        [9,10,11,12],
+        [13,14,15,16]  
+    ];
+    //Quiero acceder al valor 15        
+    var_dump($bid[2][2]);
+    //Quiero acceder al valor 14
+    var_dump($bid[2][1]);
+    echo"<br>";
+
+    //RECORRER con FOR
+    for ($i = 0; $i < count($bid); $i++){
+        for($j = 0; $j < count ($bid[$i]); $j++){
+            echo $bid[$i][$j] . " - ";
+        }
+        echo"<br>";
 
 
+    }
+    echo"<br>";
 
+    //RECORRER con FOREACH  ($array as $key => $value)  // "$key =>" se puede quitar
+    foreach($bid as $arrayInterno){
+        foreach($arrayInterno as $number){
+            echo "$number - ";
+        }
+        echo"<br>";
+    }
+    ?>
 
-
+    <h2>Array tridimensional</h2>
+    <?php
+    $asignaturas = [
+        [   
+            [
+                //1ºEvaluación
+                ["Subtema 1.1", "Subtema 1.2","Subtema 1.3"],
+                ["Subtema 2.1", "Subtema 2.2"],
+                ["Subtema 3.1", "Subtema 3.2", "Subtema 3.3", "Subtema 3.4"],
+            ],
+            [
+                //2ºEvaluación
+                ["Subtema 4.1", "Subtema 4.2", "subtema 4.3"],
+                ["Subtema 5.1", "Subtema 5.2"],
+            ],
+        ],
+        [ 
+            [
+            //1ºEvaluación
+                ["Subtema 1.1", "Subtema 1.2","Subtema 1.3"],
+                ["Subtema 2.1", "Subtema 7.2"],
+                ["Subtema 3.1", "Subtema 8.2", "Subtema 3.3", "Subtema 3.4"],
+            ],
+        ],
+    ];
+    //Quiero sacar Subtema 1.2
+    var_dump($asignaturas[0][0][0][1]);
+    //QUiero sacar subtema 8.2
+    var_dump($asignaturas[1][0][2][1]);
 
 
 
