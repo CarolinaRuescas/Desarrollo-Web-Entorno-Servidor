@@ -178,15 +178,89 @@
     echo "<tr>";
     foreach ($madrid as $mes => $temperatura){
         echo "<td>$mes</td>";
-        echo "</tr>";
     }
+    echo "</tr>";
 
+    echo "<tr>";
     foreach ($madrid as $mes => $temperatura){
-        echo "<tr><td>$temperatura</td></tr>";
+        echo "<td>$temperatura</td>";
     }
+    echo "</tr>";
     echo "</table>";
 
     ?>
+
+    <h2>Ejercicio 7</h2>
+    <p>Con los mismos valores que antes, realiza una tabla de manera que los meses se muestren en la primera columna,
+    y después una simulación de gráfica en la que cada "-" representa 1ºC de la temperatura. Quedaría así:</p>
+    <?php
+    $tabla = [
+        "Enero" => 14.8,
+        "Febrero"=> 19,
+        "Marzo"=> 25.2,
+        "Abril"=> 30.9,
+        "Mayo"=> 29.1,
+        "Junio"=> 37,
+        "Julio"=> 38.7,
+        "Agosto"=> 40,
+        "Septiembre"=> 31.6,
+        "Octubre"=> 30.1,
+        "Noviembre"=> 18.6,
+        "Diciembre" => 13.1
+    ];
+    echo "<table border = 1>";
+    echo "<tr>
+            <th>Mes</th>
+            <th>Grafica de temperatura</th>
+        </tr>";
+    foreach($tabla as $meses => $temperaturas){
+        //tengo que redondear los números para poder sustituirlos por -
+        //con FLOOR redondeamos hacia el entero inferior y con CEIL recondeamos al número superior
+        $numGuiones = floor($temperaturas);
+        //creo una variable que me repita tantas veces "-" como valor de temperatura    str_repeat (string, int#times);
+        $grafica = str_repeat ("-" , $numGuiones );
+        echo "<tr><td>$meses</td><td>$grafica</td></tr>";
+    }
+    echo "</table>";
+    ?>
+
+    <h2>Ejercicio8</h2>
+    <p>A continuación, siguiendo con la misma temática, tendrás que crear un array asociativo bidimensional. La estructura
+    será la siguiente: las claves seguirán siendo los meses, y los valores serán un array indexado con la termperatura 
+    máxima en la posición 0, y la temperatura mínima en la posición 1. De nuevo, estos valores están en la web del Ayuntamiento.
+    Muestra la información en una tabla como la siguiente:</p>
+    <?php
+
+    $datosAyuntamiento=[
+        "Enero" => [14.8 , -1.8],
+        "Febrero"=> [19 , -1.8],
+        "Marzo"=> [25.2 , -1.6],
+        "Abril"=> [30.9 , 5.1],
+        "Mayo"=> [29.1 , 8.3],
+        "Junio"=> [37 , 13.4],
+        "Julio"=> [38.7 , 17.4],
+        "Agosto"=> [40 , 15.1],
+        "Septiembre"=> [31.6 , 10.7],
+        "Octubre"=> [30.1 , 7.5],
+        "Noviembre"=> [18.6 , 3],
+        "Diciembre" => [13.1, -0.2]
+    ];
+
+     echo "<tr>
+            <th>Mes</th>
+            <th>Máx</th>
+            <th>Min</th></th>
+        </tr>";
+    foreach($datosAyuntamiento as $month => $arrayInterno){
+        foreach($arrayInterno as $number){
+        echo $number;
+        }
+    }
+    
+
+    ?>
+
+
 
 
 
